@@ -1,0 +1,13 @@
+#include "main.h"
+/**
+ * _printf - produces output according to a format.
+ * @format: character string
+ * Return: the number of characters printed (excluding the null byte used to end output to strings)
+ */
+int _printf(const char *format, ...)
+{
+	int char_num;
+	print_form spec_list[] = {
+				  {"c", _putchar},
+				  {"s", _puts},
+				  {"%", 

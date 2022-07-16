@@ -1,0 +1,26 @@
+#include "main.h"
+/**
+ * _printf - produces output according to a format.
+ * @format: character string
+ * Return: the number of characters printed
+ * (excluding the null byte used to end output to strings)
+ */
+int _printf(const char *format, ...)
+{
+	int char_num;
+	print_form spec_list[] = {
+				  {"c", _putchar},
+				  {"s", _puts},
+				  {"%", print_p},
+				  {NULL, NULL}
+	};
+	va_list arg_list;
+
+	if (format == NULL)
+		return (-1);
+
+	va_start(arg_list, format);
+	char_num = strg(format, spec_list, arg_list);
+	va_end(arg_list);
+	return (char_num);
+}
